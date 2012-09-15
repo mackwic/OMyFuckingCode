@@ -14,6 +14,7 @@ OMyFuckingCode (OMFC) is a tool to check C source code.
   * Test helper
 
 *****
+
 #### Possible rewriting ####
 
   * templating, macros, etc.
