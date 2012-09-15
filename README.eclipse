@@ -5,9 +5,11 @@ CODING WITH ECLIPSE
 
   * The excellent EGit plugin for Eclipse
   * The marvelous OcalIDE plugin for Eclipse
+  * The absolutely-wonderful OCamel Batteries Librairy
 
 #### Get the stuff working ####
 
+  0) install the Ocaml Batteries lib in your system with your installer
   1) cd path/to/your/project/directory
   2) git clone git@github.com:mackwic/OMyFuckingCode
   3) run eclipse
