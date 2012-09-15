@@ -1,0 +1,24 @@
+CODING WITH ECLIPSE
+===================
+
+#### Requirements ####
+
+  * The excellent EGit plugin for Eclipse
+  * The marvelous OcalIDE plugin for Eclipse
+
+#### Get the stuff working ####
+
+  1) cd path/to/your/project/directory
+  2) git clone git@github.com:mackwic/OMyFuckingCode
+  3) run eclipse
+  4) new project > Ocaml Project (ocamlbuild) > uncheck "Use Default location" and choose the directory of the project OMFC
+  5) click on "Finish", everything is set
+
+#### Organization ####
+
+ OMyFuckingCode/    ---------------------> git and README files
+	+------/OMyFuckingCode/	    -----> eclipse project root
+			+-----/src  -----> source files
+			+-----/test -----> test files
+
+
