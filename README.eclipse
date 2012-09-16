@@ -14,7 +14,11 @@ CODING WITH ECLIPSE
   2) git clone git@github.com:mackwic/OMyFuckingCode
   3) run eclipse
   4) new project > Ocaml Project (ocamlbuild) > uncheck "Use Default location" and choose the directory of the project OMFC
-  5) click on "Finish", everything is set
+  5) click on "Finish"
+  6) right-click on OMFC > Properties > Project
+	* field "Targets" -> put "omfc.byte"
+	* field "Other flags" -> put "-use-findlib -pkg batteries,configurator"
+	* check "Generate type information"
 
 #### Organization ####
 
