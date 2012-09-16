@@ -2,6 +2,15 @@
   This file contains many usefull types for parsing the C files
 **)
 
+(* How you should use this file :                                                                                  *)
+(* - Theses types are meant to be the different parts of C source code.                                            *)
+(* - EVERYTHING IS A BLOCK. A Block can contains some other blocks that contains blocks...                         *)
+(* - Blocks are STRONGLY typed, with polymorphims if we can.                                                       *)
+(*   So we can waranty that the source file is coherent at compile time.                                           *)
+(* and...                                                                                                          *)
+(* - There is a lot of types... yeah I know. Sorry for that. Start reading from the bottom to the top can help     *)
+
+
 open WIP
 open Common
 
@@ -54,9 +63,9 @@ type contentBlock =
   | BlockDeclaration of void declBlock
 
 type alignBlock = (width * char)
-(** bloc d'aignement d'une ligne = (largeur_en_col * char_d_align **)
-
-type eol_type = LF | CR | CRLF | Other of (char list)
+(** alignement block of a line = (col_width * char_align)
+    char_align is often space or tab
+**)
 
 type pos = (int*int)
 (** position in the line = (col_start, col_end) **)
@@ -65,15 +74,27 @@ type lineBlock = {
   num : int;
   align : (pos * alignBlock);
   content : ((pos * contentBlock) list);
-  eol : eol_type
   }
+(** A line is an height in the file (num),
+    plus a part programer use to align with the previous line (align)
+    the significant content himself containing instructions (content)
+**)
 
-type prepro_instr = string_or_something
+type prepro_instr =
+  | MacroCondition of i_dont_know_yet
+  | MacroInclude of i_dont_know_yet
+  | MacroVarDefinition of (name * string) (** (name * value) **)
+  | MacroFuncDefinition of (name * string * string) (** (name * args * value) **)
+(** A preprocessor instruction can be #ifdef and so, #include, or #define **)
 
 type fileBlock =
   | BlockComment of string
   | BlockPreProcessor of prepro_instr
   | BlockCode of lineBlock list
+(** Each BlockFile can be comment, preprocessor instruction, or a bunch of code **)
 
 type block =
   | BlockFile of fileBlock list
+(** A File block is the contener of a whole file, maybe usefull, maybe not...
+    a BlockFile contains a list of generaly typed blocks **)
+

@@ -1,3 +1,4 @@
 open Types
 
-let _ = print_endline "HELLO WORLD !"
+let _ =
+  Format_checker.moulinette "plop.c"

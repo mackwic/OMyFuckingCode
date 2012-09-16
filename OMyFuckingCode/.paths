@@ -1,3 +1,6 @@
+/usr/lib/ocaml/batteries
 .
-C:\Program Files (x86)\OCaml\lib
-OMyFuckingCode
+/usr/lib/ocaml
+bin
+src
+test
