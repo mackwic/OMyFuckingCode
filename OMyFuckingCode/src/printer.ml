@@ -4,10 +4,22 @@
   TODO
 **)
 
-let info ~from mesg =
-  BatPrintf.printf "[%s] %s\n" from mesg
+let info ~file ?(line= -1) ~from mesg =
+  if line = -1
+  then BatPrintf.printf "[INFO] %s:[%s] %s\n" file from mesg
+  else BatPrintf.printf "[INFO] %s:%d:[%s] %s\n" file line from mesg
 
-let warning = info
-let error = info
-let log = info
-let debug = info
+let warning ~file ?(line= -1) ~from mesg =
+  if line = -1
+  then BatPrintf.printf "[WARN] %s:[%s] %s\n" file from mesg
+  else BatPrintf.printf "[WARN] %s:%d:[%s] %s\n" file line from mesg
+
+let error ~file ?(line= -1) ~from mesg =
+  if line = -1
+  then BatPrintf.printf "[ERROR] %s:[%s] %s\n" file from mesg
+  else BatPrintf.printf "[ERROR] %s:%d:[%s] %s\n" file line from mesg
+
+let debug ~file ?(line= -1) ~from mesg =
+  if line = -1
+  then BatPrintf.printf "[DEBUG] %s:[%s] %s\n" file from mesg
+  else BatPrintf.printf "[DEBUG] %s:%d:[%s] %s\n" file line from mesg

@@ -4,46 +4,44 @@ Format_checker is a sort of preprocess - moulinette
 It ONLY looks at FORMATTING things
 
 Its goal is to:
-* Ensure that all the EOL mark are the same (if not, use config or ask)
 * Ensure that all the lines are 80 columns max (if not... eeeer we'll see :)
 * Ensure that there is never more than 25 lines between a {} pair
 * Ensure that the file is not too long (set by config, skipped if not)
 **)
 open BatFile
-  
 open Common
   
 type line_nb = int
 
 type format_error =
-  (* | EOL_not_consistent of line_nb *)
   | Line_too_wide of (line_nb * int)
   | Scope_too_large of (line_nb * int)
   | File_too_long of int
 
+let file = ref ""
+
 let print_error error =
+  let line_ref = ref (-1) in
   let err_msg =
     match error with
-    | (* | EOL_not_consistent line ->                        *)
-        (* "End of line is not consistent at line " ^ line *)
-        Line_too_wide (line, width) ->
+    | Line_too_wide (line, width) -> line_ref := line;
         BatPrintf.sprintf "Line %d is too wide (is %d width)" line width
-    | Scope_too_large (line, width) ->
+    | Scope_too_large (line, width) -> line_ref := line;
         BatPrintf.sprintf
           "Scope ending at line %d is too large (is %d lines large)" line
           width
     | File_too_long length ->
         BatPrintf.sprintf "File is too long (is %d lines long)" length
-  in Printer.error ~from: "First_run" err_msg
+  in Printer.error ~line:(!line_ref) ~file:!file ~from: "First_run" err_msg
   
 let process input =
-  let col_count = ref 0 and max_col_count = Config.get "format.max_col" 80
+  let col_count = ref 0 and max_col_count = Config.int "rules.format.max_column" 80
 
   and scope_count = ref 0
-  and max_scope_count = Config.get "format.max_scope_count" 25
+  and max_scope_count = Config.int "rules.format.max_function_size" 25
   and line_count = ref 1
 
-  and max_line_count = Config.get "format.max_line_count" 250 in
+  and max_line_count = Config.int "rules.format.max_file_size" 250 in
   let rec processs input depth_scope is_string =
     match BatInnerIO.read input with
     | '\n' ->
@@ -78,5 +76,6 @@ let process input =
         else ()
   
 let moulinette filepath =
+  file := Filename.basename filepath;
   with_file_in ~mode: [ `excl; `text; `nonblock ] filepath process
-  
+

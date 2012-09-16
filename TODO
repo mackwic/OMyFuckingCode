@@ -1,0 +1,25 @@
+# vim:ft=todo
+# raccourcis sous vim: (necessite vimtodo https://github.com/mivok/vimtodo)
+#   <cn space> en insertion pour nouveau todo
+#   <\cs> en normal pour changer l'etat d'une tache
+#   <\cv> en normal pour chiosir dans un menu
+#   <\cc> en normal pour cocher/decocher une case
+#   <\ca> en nornal pour archiver les taches terminees
+#
+# NOTE: j'ai personnellement remplace tous les <\c?> par <\t?> pour eviter
+#       les conflits avec la completion de code C
+
+TODO 2012-09-16 (A) +OMFC must check the @coding_style
+    DONE (A) +OMFC must check the formatting
+        CLOSED: 2012-09-16 15:39:38
+        :LOGBOOK:
+            DONE: 2012-09-16 15:39:38
+    TODO (A) +OMFC must parse correctly C source code
+    TODO (A) +OMFC must verify some @coding_style items
+	TODO list items of the epita @coding_style
+
+TODO 2012-09-16 (B) +OMFC must have a nice @printer with terminal
+
+TODO 2012-09-16 (C) +OMFC must detect the kind of sdtout (tty, pipe...) to
+adapt the output @printer
+
