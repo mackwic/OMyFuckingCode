@@ -17,7 +17,7 @@ CODING WITH ECLIPSE
   5) click on "Finish"
   6) right-click on OMFC > Properties > Project
 	* field "Targets" -> put "omfc.byte"
-	* field "Other flags" -> put "-use-findlib -pkg batteries,configurator"
+	* field "Other flags" -> put "-use-ocamlfind -pkgs batteries,configurator"
 	* check "Generate type information"
 
 #### Organization ####
