@@ -1,0 +1,10 @@
+HOW TO CODE ?
+=============
+
+Dependencies :
+    - ocaml 4.0
+    - ocaml-batteries
+    - ocamlbuild and ocamlfind
+    - ocaml-configurator (provided in lib/, do a `./configure && make && sudo make install`)
+
+More soon...

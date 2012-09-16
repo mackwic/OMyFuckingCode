@@ -1,6 +1,0 @@
-/usr/lib/ocaml/batteries
-.
-/usr/lib/ocaml
-bin
-src
-test
