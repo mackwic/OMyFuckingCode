@@ -1,3 +1,6 @@
+(* Source from https://github.com/superbobry/ocaml-configurator *)
+(* version of Mar 09, 2012                                      *)
+
 type expr = [ `Import of string
             | `Bind of (string * value)
             | `Group of (string * expr list)

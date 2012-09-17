@@ -1,3 +1,6 @@
+(* Source from https://github.com/superbobry/ocaml-configurator *)
+(* version of Mar 09, 2012                                      *)
+
 open StdLabels
 
 module Config = struct

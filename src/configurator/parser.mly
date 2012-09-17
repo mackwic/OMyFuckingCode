@@ -1,3 +1,7 @@
+/* Source from https://github.com/superbobry/ocaml-configurator
+ * version of Mar 09, 2012
+ */
+
 %token EOL EOF
 %token IMPORT
 %token TRUE FALSE
