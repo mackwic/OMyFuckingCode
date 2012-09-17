@@ -1,0 +1,38 @@
+### Starting build.
+# Target: src/omfc.ml.depends, tags: { extension:ml, file:src/omfc.ml, ocaml, ocamldep, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamldep -package batteries,configurator -modules src/omfc.ml > src/omfc.ml.depends
++ /usr/bin/ocamlfind ocamlc -where > /home/thomas/Documents/projects/ocaml/OMyFuckingCode/_build/ocamlc.where
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Target: src/config.mli.depends, tags: { extension:mli, file:src/config.mli, ocaml, ocamldep, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamldep -package batteries,configurator -modules src/config.mli > src/config.mli.depends
+# Target: src/config.cmi, tags: { byte, compile, extension:mli, file:src/config.mli, interf, ocaml, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/config.cmi src/config.mli
++ /usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/config.cmi src/config.mli
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Target: src/omfc.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/omfc.cmo, file:src/omfc.ml, implem, ocaml, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/omfc.cmo src/omfc.ml
++ /usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/omfc.cmo src/omfc.ml
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Target: src/config.ml.depends, tags: { extension:ml, file:src/config.ml, ocaml, ocamldep, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamldep -package batteries,configurator -modules src/config.ml > src/config.ml.depends
+# Target: src/common.ml.depends, tags: { extension:ml, file:src/common.ml, ocaml, ocamldep, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamldep -package batteries,configurator -modules src/common.ml > src/common.ml.depends
+# Target: src/common.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/common.cmo, file:src/common.ml, implem, ocaml, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/common.cmo src/common.ml
++ /usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/common.cmo src/common.ml
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Target: src/config.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/config.cmo, file:src/config.ml, implem, ocaml, package(batteries,configurator), quiet, traverse }
+/usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/config.cmo src/config.ml
++ /usr/bin/ocamlfind ocamlc -c -package batteries,configurator -I src -I test -I lib/ocaml-configurator/src -o src/config.cmo src/config.ml
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Target: src/omfc.byte, tags: { byte, dont_link_with, extension:byte, file:src/omfc.byte, link, ocaml, package(batteries,configurator), program, quiet, traverse }
+/usr/bin/ocamlfind ocamlc -linkpkg -package batteries,configurator src/common.cmo src/config.cmo src/omfc.cmo -o src/omfc.byte
++ /usr/bin/ocamlfind ocamlc -linkpkg -package batteries,configurator src/common.cmo src/config.cmo src/omfc.cmo -o src/omfc.byte
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/lib/ocaml/stublibs
+ocamlfind: [WARNING] The DLL dlllwt-unix.so occurs in multiple directories: /usr/local/lib/ocaml/3.12.1/stublibs
+# Compilation successful.

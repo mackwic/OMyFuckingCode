@@ -1,0 +1,3 @@
+<*>: use_batteries, annot, pkg_configurator
+<src>: include
+<test>: include
