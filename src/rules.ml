@@ -11,6 +11,8 @@ object(this)
                 | c -> cur_char <- cur_char + 1; this#parse c
 
         method virtual parse: (char option) -> (char option)
+        method virtual name: string
+        method virtual priority: int
         method bind (obj:rule) = binded <-
                 fun c -> obj#parse (binded c)
 end
@@ -30,6 +32,6 @@ let col_80 = <object inherit rule
         >
 
 
-let plop = <object inherit rule
+let identity = <object inherit rule
        method parse c = c
        >
