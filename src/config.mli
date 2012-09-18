@@ -22,3 +22,6 @@ val string : path:string -> default:string -> string
 
 val bool : path:string -> default:bool -> bool
 (** Get a bool from the configuration *)
+
+val custom : path:string -> f:(string -> 'a) -> default:'a -> 'a
+(** Get a custom value parsed with [f] *)

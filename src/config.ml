@@ -45,3 +45,8 @@ let bool ~path ~default =
   | None -> if mem path
             then find path |> bool_of_string else default
 
+let custom ~path ~f ~default =
+  match Configurator.string !conf path with
+  | Some s -> f s
+  | None -> if mem path
+            then find path |> f else default
