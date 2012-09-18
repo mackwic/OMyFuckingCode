@@ -9,7 +9,7 @@ PACKAGES := batteries
 
 # given to ocamlc/ocamlopt, comma separated flags
 CFLAGS = -annot,-principal,-w,+1..30
-FLAGS = -j 0 -r -I . -use-ocamlfind -pkg $(PACKAGES) -cflags $(CFLAGS) -Is $(DIRS)
+FLAGS = -j 0 -r -Is $(DIRS) -use-ocamlfind -pkg $(PACKAGES) -cflags $(CFLAGS) -Is $(DIRS)
 
 ifdef DEBUG
 	CFLAGS := $(CFLAGS),-g
@@ -18,7 +18,6 @@ endif
 all:
 	ocamlbuild $(EXEC).byte $(FLAGS)
 	cp $(EXEC).byte $(EXEC)
-
 
 clean::
 	ocamlbuild -clean

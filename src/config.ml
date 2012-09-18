@@ -2,9 +2,7 @@
   Handle all the configuration stuff
 **)
 
-open Configurator
 open Common
-(* plop *)
 
 let table = Hashtbl.create 101
 (** used for runtime configuration *)
