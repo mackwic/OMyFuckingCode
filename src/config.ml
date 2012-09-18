@@ -4,6 +4,7 @@
 
 open Configurator
 open Common
+(* plop *)
 
 let table = Hashtbl.create 101
 (** used for runtime configuration *)
